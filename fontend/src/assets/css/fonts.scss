@@ -1,0 +1,59 @@
+/* *** Noto Sans KR *** */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  src: url('@/assets/fonts/NotoSansKR-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url('@/assets/fonts/NotoSansKR-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/NotoSansKR-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url('@/assets/fonts/NotoSansKR-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('@/assets/fonts/NotoSansKR-Bold.woff2') format('woff2');
+}
+/* *** // Noto Sans KR *** */
+
+
+
+/* *** Manrope *** */
+/* *** 폰트 정의 : 웹폰트 굵기를 디자인에서 정의한대로 하면 디자인보다 얇게 표현되어 한단계씩 올림.
+      폰트 굵기는 디자인에서 정의한 값으로 하되 폰트 패밀리 연결을 한단계 올림.
+      ex) font-weight:400일 경우 : NotoSansKR-Regular -> Manrope-Medium,
+          font-weight:700일 경우 : Manrope-Bold -> Manrope-ExtraBold
+
+*** */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  src: url('@/assets/fonts/Manrope-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@/assets/fonts/Manrope-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('@/assets/fonts/Manrope-ExtraBold.woff2') format('woff2');
+}
+/* *** // Manrope *** */

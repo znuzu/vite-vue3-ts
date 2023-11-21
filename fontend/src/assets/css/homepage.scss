@@ -1,0 +1,46 @@
+
+.hpgTit{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  .hpgTitText{
+    @extend %fs28;
+    font-weight: 700;
+  }
+}
+
+.hpgList{
+  $listWt:1340px;
+  $gap:91px;
+  $n:3;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px $gap;
+  width: $listWt;
+  margin: 0 auto 60px;
+  .hpgListItem{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: calc(($listWt - $gap * ($n - 1)) / $n);
+    height: 148px;
+    padding: 30px 40px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    cursor: pointer;
+    .text{
+      display: flex;
+      flex-flow: column nowrap;
+      margin-right: auto;
+      @extend %fs20;
+    }
+    .tit{
+      margin-bottom: 20px;
+      @extend %fs36;
+      color: #7D91F5;
+    }
+  }
+}

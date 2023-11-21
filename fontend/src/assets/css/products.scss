@@ -1,0 +1,377 @@
+.mgt8{
+  margin-top: 8px !important;
+}
+
+
+
+/* *** 삼품관리 상단   *** */
+
+/* ** 검색 ** */
+.prdSch{
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20px;
+}
+/* ** //검색 ** */
+
+/* ** 페이지 및 버튼  ** */
+.prdListTit{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  .prdListTitText{
+    @extend %fs14;
+  }
+}
+/* ** //페이지 및 버튼  ** */
+
+/* *** //삼품관리 상단  *** */
+
+
+
+/* *** 삼품관리 리본  *** */
+.prdRibonWrap{
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4px;
+  top: -12px;
+  right: 20px;  
+  @at-root .prdTblListItem .prdRibonWrap{
+    position: relative;
+    flex-shrink: 0;
+    top:auto;
+    right: auto;
+  }
+}
+/* *** //삼품관리 리본  *** */
+
+
+
+/* *** 삼품관리 이미지  *** */
+.prdImgWrap{
+  position: relative;
+  width: 100%;
+  height: 284px;
+  margin-top: 12px;
+  background-color: #F9F7F3; 
+  border-radius: 8px;
+  .text{
+    padding: 50px;
+    @extend %fs60;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @at-root .prdTblListItem .prdImgWrap{
+    flex-shrink: 0;
+    width: 155px;
+    height: 116px;
+    margin-top: 0;
+    .text{
+      padding: 0 20px;
+      @extend %fs28;
+    }
+  }
+  @at-root .productOrderListItem .imgBox{
+    .text{
+      padding: 0 10px;
+      @extend %fs24;
+    }
+  }
+
+  @at-root .noExp, .soldOut{
+    .imgBox,
+    .prdImgWrap{
+      position: relative;
+      &::before{   
+        content: '';     
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        // z-index: 1;
+      }
+      .text{
+        position: absolute;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color:#fff;
+        text-align: center;
+        font-weight: 700;        
+        word-break: keep-all;
+      }
+    }
+    
+  }
+} 
+/* *** //삼품관리 이미지  *** */
+
+
+
+/* *** 삼품관리 목록 리스트 - 갤러리뷰  *** */
+.prdList{
+  $listWt:1340px;
+  $gap:91px;
+  $n:3;
+  
+  display: flex;
+  flex-flow: row wrap;
+  gap: 40px $gap;
+  width: $listWt;
+  margin: 40px auto 0;
+  
+  .prdListItem{   
+    position: relative; 
+    width: calc(($listWt - $gap * ($n - 1)) / $n);
+    min-height: 530px;    
+    .prdImgWrap{
+      &::before{    
+        padding: 0 100px;
+        font-size: 60px;
+        line-height: 60px;
+      }
+    }   
+  }
+
+  .listItemCont{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    padding: 32px 10px 30px;
+    .name{}
+    .detail{
+      font-weight: 700;
+      @extend %fs18;
+      @include ellipsis(2);
+    }
+    .descWrap{
+      display: flex;
+      flex-flow: row wrap;
+      @extend %fs14;
+      .desc{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        &:not(:last-child){
+          &::after{
+            content: '';
+            display: block;
+            width: 1px;
+            height: 14px;
+            margin: 0 10px;
+            background-color: #D9D9D9;
+          }
+        }
+      }
+    }
+    .badgeWrap{
+      display: flex;
+      flex-flow: row wrap;
+      gap: 8px 4px;
+      .badge{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        height: 26px;
+        padding: 0 12px;
+        background-color: #8F9191;
+        border-radius: 13px;
+        @extend %fs12;
+        color:#fff;
+      }
+    }
+  } 
+}
+/* *** //삼품관리 목록 리스트 - 갤러리뷰  *** */
+
+
+
+/* *** 삼품관리 목록 리스트 - 테이블 리스트뷰  *** */
+.prdTblList{
+  margin-top: 16px;
+
+  .prdTblListItem{
+    display: flex;
+    flex-flow: row nowrap; 
+    align-items: center;
+    justify-content:flex-start;
+    width: 100%;
+    text-align: left;
+    .prdImgWrap{
+      &::before{     
+        padding: 0 30px;
+        font-size: 28px;
+        line-height: 28px;
+      }
+    }
+  }
+  .listItemCont{
+    padding: 0 24px;
+    width: 563px;
+    .descWrap{
+      display: flex;
+      flex-flow: row wrap;
+      margin-top: 4px;
+      @extend %fs14;
+      .desc{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        &:not(:last-child){
+          &::after{
+            content: '';
+            display: block;
+            width: 1px;
+            height: 14px;
+            margin: 0 10px;
+            background-color: #D9D9D9;
+          }
+        }
+      }
+    }
+    .name {
+      padding: 4px 0;
+      @extend %fs16;
+    }
+    .detail{
+      margin-top: 10px;
+      font-weight: 700;
+      @extend %fs18;
+      @include ellipsis(2);
+    }
+    .badgeWrap{
+      display: flex;
+      flex-flow: row wrap;
+      gap: 8px 4px;
+      .badge{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        height: 26px;
+        padding: 0 12px;
+        background-color: #8F9191;
+        border-radius: 13px;
+        @extend %fs12;
+        color:#fff;
+      }
+    }
+  }
+  .tbl{
+  }
+
+}
+/* *** 삼품관리 목록 리스트 - 테이블 리스트뷰  *** */
+
+
+
+/* *** 삼품관리 상세 리스트  *** */
+.prdDetail{
+  display: flex;
+  flex-flow: row nowrap;
+  .prdImgWrap{
+    flex-shrink: 0;
+    width: 386px;
+  }
+  .detailCont{
+    padding-top: 64px;
+    padding-left: 47px;
+    .name{
+      @extend %fs24;
+    }
+    .detail{
+      margin-top: 8px;
+      font-weight: 700;
+      @extend %fs28;
+    }
+    .descWrap{
+      display: flex;
+      flex-flow: row wrap;
+      margin-top: 20px;
+      @extend %fs18;
+      .desc{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        &:not(:last-child){
+          &::after{
+            content: '';
+            display: block;
+            width: 1px;
+            height: 14px;
+            background-color: #D9D9D9;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    .badgeWrap{
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 8px;
+      margin-top: 20px;
+      .badge{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 0 20px;
+        border-radius: 16px;
+        background-color: #54585A;
+        color: #fff;
+        font-weight: 700;
+        &.type1{
+          background-color: #55B242;
+        }
+        &.type2{
+          background-color: #7D91F5;
+        }
+      }
+    }
+  }
+}
+/* *** //삼품관리 상세 리스트  *** */
+
+
+
+/* *** 삼품관리 선택항목추가  *** */
+.prdBtnWrap{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-top: 42px;
+  margin-bottom: 16px;
+}
+/* *** //삼품관리 선택항목추가  *** */
+
+
+
+/* *** 선택항목추가 리스트 *** */
+.prdTbList{
+  .prdTbListItem{
+    &:not(:last-child){
+      margin-bottom: 40px;
+    }
+  }
+}
+.tbNoData{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 416px;
+  border-top: 1px solid #2F2F2F;
+  border-bottom: 1px solid #D9D9D9;
+  @extend %fs24;
+}
+/* *** //선택항목추가 리스트 *** */

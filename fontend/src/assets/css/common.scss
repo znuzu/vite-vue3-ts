@@ -1,0 +1,1971 @@
+/* *** btn *** */
+.btn {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  border: 1px solid #8F9191;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #54585A;
+  vertical-align: middle;
+
+  /* ** color ** */
+  &.color1 {
+    background-color: #8F9191;
+    border-color: #8F9191;
+    color: #fff;
+  }
+
+  &.color2 {
+    background-color: #FF404B;
+    border-color: #FF404B;
+    color: #fff;
+  }
+
+  /* ** //color ** */
+
+
+  /* ** disabled ** */
+  &.disabled,
+  &:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #fff;
+  }
+
+  /* ** //disabled ** */
+
+
+  /* ** size ** */
+  &.md {
+    height: 40px;
+    // min-width: 100px;
+    line-height: 38px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 10px;
+  }
+
+  &.lg {
+    height: 54px;
+    min-width: 120px;
+    line-height: 52px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 16px;
+  }
+
+  /* ** //size ** */
+
+  /* ** icon ** */
+
+  /* *size24* */
+  &.icoClose {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    @include bgIco(ico_delete2);
+    background-color: transparent;
+    border-width: 0;
+  }
+
+  &.icoTooltip {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    @include bgIco(ico_tooltip);
+    border-width: 0;
+    cursor: default;
+
+    &:hover {
+      .tooltipBox {
+        position: absolute;
+        display: block;
+        width: 300px;
+        padding: 20px;
+        left: 40px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.35);
+        z-index: 100;
+
+        &::before {
+          $imW: 16px;
+
+          content: '';
+          position: absolute;
+          display: block;
+          width: $imW;
+          height: 100%;
+          left: -$imW;
+          top: 0;
+          @include bgIco(im_tooltipArrow);
+        }
+      }
+    }
+
+    @at-root .tooltipBox {
+      display: none;
+    }
+  }
+
+  /* *size32* */
+  &.icoDelete {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    @include bgIco(ico_delete);
+    border-width: 0;
+  }
+
+  &.icoCorrection {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    @include bgIco(ico_correction);
+    border-width: 0;
+  }
+
+  &.icoOptionPlus {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    @include bgIco(ico_optionPlus);
+    border-width: 0;
+  }
+
+  &.icoMore {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    @include bgIco(ico_more);
+    border-width: 0;
+  }
+
+  /* *size40* */
+  &.icoRemove {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-image: url(@/assets/img/common/ico_btnRemove.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+  }
+
+  &.icoAdd {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-image: url(@/assets/img/common/ico_btnAdd.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+  }
+
+  &.icoFile {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    @include bgIco(ico_attachedfile);
+    border-width: 0;
+  }
+
+  &.icoDownload {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    @include bgIco(ico_download);
+    border-width: 0;
+  }
+
+  &.icoPrdList {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 14px;
+    @include bgIco(ico_PrdList);
+    border-width: 0;
+    border-radius: 0;
+  }
+
+  &.icoPrdTbList {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 14px;
+    @include bgIco(ico_PrdTbList);
+    border-width: 0;
+    border-radius: 0;
+  }
+
+  &.icoMapControl {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%235f6264' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' class='icon icon-tabler icon-tabler-focus-2'%3E%3Cpath stroke='none' d='M0 0h24v24H0z'/%3E%3Ccircle cx='12' cy='12' r='.5' fill='%235f6264'/%3E%3Ccircle cx='12' cy='12' r='7'/%3E%3Cpath d='M12 3v2M3 12h2M12 19v2M19 12h2'/%3E%3C/svg%3E");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* ** icon ** */
+
+  &.search {
+    width: 100px;
+    background-color: #8F9191;
+    border-color: #8F9191;
+    color: #fff;
+    font-size: 18px;
+  }
+
+}
+
+/* *** //btn *** */
+
+
+/* *** paging *** */
+.paging {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 27px;
+    border: 1px solid #efefef;
+    font-size: 16px;
+    line-height: 52px;
+    color: #000;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover,
+    &.on {
+      font-weight: 700;
+      color: #ff404b;
+      border-color: #ff404b;
+
+      &.first,
+      &.last {
+        background-image: url(@/assets/img/common/ico_pagingArrowDoubleOn.png);
+      }
+
+      &.prev,
+      &.next {
+        background-image: url(@/assets/img/common/ico_pagingArrowOn.png);
+      }
+    }
+
+    &.first,
+    &.last {
+      background-image: url(@/assets/img/common/ico_pagingArrowDouble.png);
+    }
+
+    &.prev,
+    &.next {
+      background-image: url(@/assets/img/common/ico_pagingArrow.png);
+    }
+
+    &.last,
+    &.next {
+      transform: rotateZ(180deg);
+    }
+  }
+}
+
+/* *** //paging *** */
+
+
+/* *** errorText *** */
+.errorText {
+  margin-top: 6px;
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #ff404b;
+  background: url(@/assets/img/common/ico_errorText.png) no-repeat left top /
+    20px;
+}
+
+/* *** //errorText *** */
+
+
+/* *** inputText *** */
+.inputText {
+  display: inline-block;
+  position: relative;
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 0 50px 0 19px;
+    height: 40px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    @include ellipsis;
+
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &:focus {
+      border-color: #000;
+    }
+
+    &:read-only {
+      background-color: #FAFAFA;
+      border-color: #FAFAFA;
+      color: #8F9191;
+
+      ~ .btnClear {
+        display: none;
+      }
+    }
+
+    &:disabled {
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+      // color: #999;
+      ~ .btnClear {
+        display: none;
+      }
+    }
+  }
+
+  .btnClear {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: url(@/assets/img/common/ico_inputBtnClear.png) no-repeat center / contain;
+  }
+
+  .btnSch {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 11px;
+    right: 20px;
+    background: url(@/assets/img/common/ico_inputBtnSch.png) no-repeat center / contain;
+
+    &:disabled {
+      background: url(@/assets/img/common/ico_inputBtnSchDis.png) no-repeat center / contain;
+    }
+
+    ~ .btnClear {
+      right: 62px;
+    }
+  }
+
+  &.isError {
+    input {
+      color: #cc0000;
+      border-color: #cc0000;
+    }
+  }
+}
+
+/* *** //inputText *** */
+
+
+/* *** selectBox *** */
+.selectBox {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+
+  &.round {
+    .v-select .vs__selected-options .vs__search {
+      border-radius: 20px;
+    }
+  }
+
+  .v-select {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    .vs__no-options {
+      display: none;
+    }
+
+    .vs__selected-options {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+
+      .vs__selected {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0 46px 0 20px;
+        line-height: 38px;
+        height: 40px;
+        font-size: 16px;
+        color: #2f2f2f;
+        @include ellipsis;
+        cursor: pointer;
+      }
+
+      .vs__search {
+        display: block;
+        width: 100%;
+        padding: 0 45px 0 19px;
+        line-height: 52px;
+        height: 40px;
+        font-size: 16px;
+        color: #2f2f2f;
+        border: 1px solid #d9d9d9;
+        border-radius: 8px;
+        @include ellipsis;
+        cursor: pointer;
+
+        &::placeholder {
+          color: #ccc;
+        }
+
+        &:focus {
+          border-color: #000;
+        }
+      }
+    }
+
+    .vs__actions {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      svg {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin: 12px 19px 0 0;
+        background: url(@/assets/img/common/ico_selectBoxArrow.png) no-repeat center / contain;
+      }
+    }
+
+    .vs__dropdown-menu {
+      display: block;
+      z-index: 10;
+      position: absolute;
+      min-width: 100%;
+      left: 0;
+      top: calc(100% + 4px);
+      padding: 15px 0;
+      border: 1px solid #d9d9d9;
+      background-color: #fff;
+      border-radius: 8px;
+      max-height: 232px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include scrollbar;
+    }
+
+    .vs__open-indicator {
+      display: none;
+    }
+
+    .vs__dropdown-option {
+      display: block;
+      font-size: 16px;
+      line-height: 40px;
+      padding: 0 19px;
+      @include ellipsis;
+      cursor: pointer;
+
+      &:hover {
+        color: #FF404B;
+        font-weight: 700;
+      }
+    }
+
+    .vs__dropdown-option--highlight {
+      color: #FF404B;
+      font-weight: 700;
+    }
+
+    &.vs--open {
+      .vs__actions {
+        &::after {
+          content: '';
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+
+    &.vs--disabled {
+      .vs__selected-options {
+        background-color: #f5f5f5;
+        border-color: #d9d9d9;
+      }
+    }
+  }
+
+  &.isError {
+    .v-select {
+      .vs__selected-options {
+        .vs__selected {
+          color: #cc0000;
+        }
+
+        .vs__search {
+          border-color: #cc0000;
+        }
+      }
+    }
+  }
+}
+
+/* *** //selectBox *** */
+
+
+/* *** textarea *** */
+.textarea {
+  display: block;
+  position: relative;
+
+  textarea {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 9px 19px;
+    border-radius: 8px;
+    resize: none;
+
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &:focus {
+      border-color: #000;
+    }
+
+    &:disabled {
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+
+      ~ .btnClear {
+        display: none;
+      }
+    }
+  }
+
+  &.isError {
+    textarea {
+      color: #cc0000;
+      border-color: #cc0000;
+    }
+  }
+}
+
+/* *** //textarea *** */
+
+
+/* *** checkbox *** */
+.checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  min-height: 28px;
+
+  input {
+    @include hidden;
+
+    &:checked {
+      ~ i {
+        background-image: url(@/assets/img/common/ico_checkboxOn.png);
+      }
+    }
+  }
+
+  > i {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(@/assets/img/common/ico_checkbox.png);
+  }
+
+  span {
+    margin-left: 6px;
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+    color: #2f2f2f;
+  }
+}
+
+/* *** //checkbox *** */
+
+
+/* *** radio *** */
+.radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  min-height: 28px;
+
+  input {
+    @include hidden;
+
+    &:checked {
+      ~ i {
+        background-image: url(@/assets/img/common/ico_radioOn.png);
+      }
+    }
+  }
+
+  > i {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(@/assets/img/common/ico_radio.png);
+  }
+
+  span {
+    margin-left: 6px;
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+    color: #2f2f2f;
+  }
+}
+
+/* *** //radio *** */
+
+
+/* *** datepicker *** */
+.datepicker {
+  .dp__theme_dark,
+  .dp__theme_light {
+    --dp-background-color: #fff;
+    --dp-text-color: #212121;
+    --dp-hover-color: #f3f3f3;
+    --dp-hover-text-color: #212121;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #1976d2;
+    --dp-primary-disabled-color: #6bacea;
+    --dp-primary-text-color: #f8f5f5;
+    --dp-secondary-color: #c0c4cc;
+    --dp-border-color: #ddd;
+    --dp-menu-border-color: #ddd;
+    --dp-border-color-hover: #aaaeb7;
+    --dp-disabled-color: #f6f6f6;
+    --dp-scroll-bar-background: #f3f3f3;
+    --dp-scroll-bar-color: #959595;
+    --dp-success-color: #76d275;
+    --dp-success-color-disabled: #a3d9b1;
+    --dp-icon-color: #959595;
+    --dp-danger-color: #ff6f60;
+    --dp-marker-color: #ff6f60;
+    --dp-tooltip-color: #fafafa;
+    --dp-disabled-color-text: #8e8e8e;
+    --dp-highlight-color: rgb(25 118 210 / 10%);
+  }
+
+  display: inline-block;
+  position: relative;
+
+  .dp__action_buttons {
+    white-space: nowrap;
+  }
+
+  .dp__input {
+    display: block;
+    width: 100%;
+    padding: 0 80px 0 19px;
+    height: 40px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    @include ellipsis;
+
+    &::placeholder {
+      color: #ccc;
+    }
+
+    &.dp__input_focus {
+      border-color: #000;
+    }
+
+    &:disabled {
+      background-color: #f5f5f5;
+      border-color: #d9d9d9;
+    }
+  }
+
+  .dp__input_icon {
+    left: auto;
+    right: 0;
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .dp__clear_icon {
+    z-index: 1;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.isError {
+    .dp__input {
+      color: #cc0000;
+      border-color: #cc0000;
+    }
+  }
+}
+
+.datePickerWrap {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+
+  .textTit {
+    font-weight: bold;
+  }
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+/* *** //datepicker *** */
+
+
+/* *** 테이블 상단 검색 *** */
+.tbSch {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  margin-bottom: 16px;
+
+  .tbSchText {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    @extend %fs14;
+  }
+
+  .tbSchTitle {
+    align-self: center;
+    margin-right: 10px;
+  }
+}
+
+/* *** //테이블 상단 검색 *** */
+
+
+/* *** 테이블 상단 안내 문구 *** */
+.tdDesc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+
+  .tdDescText {
+    @extend %fs16;
+  }
+}
+
+/* *** //테이블 상단 안내 문구 *** */
+
+
+/* *** 테이블 상단 타이틀 *** */
+.tbTit {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  margin-bottom: 16px;
+
+  .tbTitText {
+    @extend %fs24;
+    font-weight: 700;
+  }
+}
+
+/* *** //테이블 상단 타이틀 *** */
+
+
+/* *** 테이블 하단 버튼 *** */
+.tbBtnWrap {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 20px;
+}
+
+/* *** //테이블 하단 버튼 *** */
+
+
+/* *** tbl *** */
+table {
+  word-break: break-all;
+}
+
+.tbl {
+  display: block;
+
+  table {
+    border-top: 2px solid #2F2F2F;
+    text-align: center;
+  }
+
+  .tbCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    @extend %fs16;
+
+    &.taL {
+      justify-content: flex-start;
+    }
+  }
+
+  th {
+    font-weight: 700;
+    height: 60px;
+    vertical-align: middle;
+    background-color: #F5F5F5;
+  }
+
+  td {
+    height: 55px;
+    vertical-align: middle;
+  }
+
+  tr {
+    border-bottom: 1px solid #D9D9D9;
+  }
+
+  a,
+  .link {
+    @include ellipsis;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    text-underline-offset: 3px;
+  }
+
+  &.tbHover {
+    tbody {
+      tr {
+        &:hover,
+        &.selected {
+          background-color: #DCE0F8;
+        }
+      }
+    }
+  }
+
+  .tbCont {
+    .optionWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        input[type='text'] {
+          border-radius: 20px;
+
+          &:focus {
+            border-color: #ff404b;
+          }
+        }
+      }
+
+      .btns {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+/* *** //tbl *** */
+
+
+/* *** tbw *** */
+.tbw {
+  position: relative;
+  display: block;
+
+  /* ** tbw table 기본셋팅 ** */
+  table {
+    border-top: 2px solid #2F2F2F;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 700;
+    vertical-align: middle;
+    background-color: #F5F5F5;
+
+    .tbCont {
+      padding-left: 40px;
+      align-items: center;
+    }
+  }
+
+  td {
+    height: 68px;
+    vertical-align: middle;
+
+    .tbCont {
+      gap: 10px;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid #D9D9D9;
+  }
+
+  /* ** //tbw table 기본셋팅 ** */
+
+  + .tbw {
+    margin-top: 30px;
+
+    table {
+      border-top: 1px solid #D9D9D9;
+    }
+  }
+
+  [class ^="tbCont"] {
+    display: flex;
+    padding: 12px 20px;
+
+    &:not(:last-child) {
+      padding-bottom: 0;
+    }
+
+    &.lineTop {
+      margin-top: 12px;
+      border-top: 1px solid #D9D9D9;
+    }
+  }
+
+  .tbCont {
+    flex-flow: row nowrap;
+    // align-items: baseline;    
+    &.required {
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-left: 4px;
+        @include bgIco(ico_bulletStar);
+      }
+    }
+
+    .checkbox,
+    .radio {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      min-height: 28px;
+      max-height: 40px;
+      padding: 0;
+
+      > i {
+        position: static;
+      }
+    }
+
+    .unit {
+      line-height: 40px;
+    }
+
+    .tbContInfo {
+      align-items: center;
+      padding: 0;
+    }
+
+    .tbFileAttachable {
+      position: relative;
+      width: 100%;
+      height: auto;
+      min-height: 180px;
+      padding: 12px 20px;
+      background-color: #F7F9FB;
+      border: 1px solid #EFEFEF;
+      border-radius: 8px;
+
+      .FileUpload {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .noData {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+        color: #54585A;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 56px;
+          height: 56px;
+          @include bgIco(ico_attach);
+        }
+      }
+    }
+
+    &.column {
+      flex-direction: column;
+      gap: 20px;
+
+      .contTit {
+        align-self: flex-start;
+      }
+    }
+
+    .contTit {
+      align-self: center;
+      font-weight: 700;
+      min-width: 80px;
+      @extend %fs16;
+    }
+
+    .contWrap {
+      display: flex;
+
+      .contBox {
+        display: flex;
+        align-items: center;
+        min-width: 280px;
+
+        &.control {
+          display: flex;
+          gap: 10px;
+        }
+      }
+
+      &.info {
+        gap: 80px;
+      }
+
+      &.manage {
+        gap: 40px;
+      }
+    }
+
+    .colorList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      text-align: center;
+
+      label,
+      .label {
+        display: block;
+        width: 80px;
+        cursor: pointer;
+
+        .color {
+          width: 48px;
+          height: 48px;
+          margin: 0 auto;
+          border: 1px solid #dfdfdf;
+          border-radius: 50%;
+        }
+
+        .name {
+          margin-top: 6px;
+          @extend %fs16;
+        }
+
+        :checked + .color {
+          border-color: #ff404b;
+          border-width: 2px;
+          background: url(@/assets/img/common/ico_colorSelect.png) center/24px no-repeat;
+        }
+      }
+    }
+
+    .photoList {
+      width: 100%;
+      border: 1px solid #efefef;
+      border-radius: 8px;
+      background: linear-gradient(0deg, #f7f9fb, #f7f9fb), linear-gradient(0deg, #efefef, #efefef);
+
+      ul {
+        display: flex;
+        gap: 20px;
+        padding: 16px 20px;
+        overflow-x: auto;
+        @include scrollbar;
+
+        li {
+          &:hover {
+            .imgWrap {
+              box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+              img {
+                box-shadow: 0 0 0 2px #df0015 inset;
+              }
+            }
+          }
+
+          .imgWrap {
+            position: relative;
+            width: 155px;
+            height: 116px;
+            border-radius: 8px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 8px;
+              box-shadow: 0 0 0 1px #d9d9d9 inset;
+              background: #fff;
+            }
+
+            button {
+              position: absolute;
+              top: 4px;
+              right: 4px;
+              width: 24px;
+              height: 24px;
+              background: url(@/assets/img/common/ico_photoDelete.png) center/24px
+            }
+          }
+
+          .txtWrap {
+            text-align: right;
+            @extend %fs14;
+
+            span {
+              font-weight: 700;
+              color: #7d91f5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tbContInfo {
+    flex-flow: row nowrap;
+    gap: 4px;
+    @extend %fs14;
+    color: #54585A;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      @include bgIco(ico_info);
+    }
+  }
+
+  .tbContImg {
+    img {
+      height: 200px;
+      min-width: 400px;
+      border: 1px solid #EFEFEF;
+      object-fit: contain;
+    }
+  }
+
+  .tbInfo {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    @extend %fs14;
+
+    .required {
+      display: inline-flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 7px;
+        height: 7px;
+        margin-right: 6px;
+        @include bgIco(ico_bulletStar);
+      }
+    }
+  }
+
+  .tbFileList {
+    position: relative;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    // padding: 10px 20px;
+    line-height: 28px;
+
+    .file {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &.type2 {
+      gap: 4px;
+      width: 100%;
+
+      .file {
+        gap: 0 20px;
+        color: #7D91F5;
+        text-decoration: none;
+
+        .name {
+          flex: 1;
+          width: 700px;
+          @include ellipsis;
+        }
+
+        .byte {
+          width: 100px;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .tbFileAttachable {
+    height: 100%;
+  }
+
+  .tbEditor {
+    height: 100%;
+  }
+
+  .fileTextWrap {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+
+    .fileText {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 4px;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 16px;
+          margin-left: 20px;
+          background-color: #D9D9D9;
+        }
+      }
+    }
+  }
+}
+
+/* *** //tbw *** */
+
+
+/* *** tab *** */
+.tab {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 42px;
+
+  .link {
+    line-height: 30px;
+    font-size: 20px;
+    color: #54585A;
+    border-bottom: 2px solid transparent;
+
+    &:hover,
+    &.on {
+      font-weight: 700;
+      color: #FF404B;
+      border-color: #FF404B;
+    }
+  }
+}
+
+/* *** //tab *** */
+
+
+/* *** userInfoDl *** */
+.userInfoDl {
+  display: table;
+  table-layout: auto;
+  width: 100%;
+  font-size: 16px;
+  line-height: 28px;
+
+  > div {
+    margin-top: 10px;
+    display: flex;
+  }
+
+  dt {
+    min-width: 70px;
+    margin-right: 10px;
+    color: #54585A;
+  }
+
+  dd {
+    flex: auto;
+    font-weight: 700;
+    color: #2F2F2F;
+  }
+}
+
+/* *** //userInfoDl *** */
+
+
+/* *** inputCategoryName *** */
+.inputCategoryName {
+  display: block;
+
+  .inputText {
+    display: block;
+  }
+
+  .count {
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: right;
+    color: #54585A;
+
+    strong {
+      font-weight: 400;
+      color: #7D91F5;
+    }
+  }
+}
+
+/* *** //inputCategoryName *** */
+
+
+/* *** 옵션 컨텐츠 *** */
+.optsWrap {
+  margin-bottom: 16px;
+}
+
+.optCont {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+
+  &.type1 {
+    gap: 12px 60px;
+  }
+
+  &.type2 {
+    gap: 12px 40px;
+  }
+
+  * + & {
+    margin-top: 12px;
+  }
+}
+
+/* *** //옵션 컨텐츠 *** */
+
+
+/* *** 상품 리스트 리본 *** */
+.ribon {
+  display: block;
+  width: 59px;
+  height: 51px;
+
+  $icoType: (
+          1 : 'ico_ribonType1', //신차리스
+          2 : 'ico_ribonType2', //한정수량
+          3 : 'ico_ribonType3', //마감임박
+          4 : 'ico_ribonType4', //vat환급
+          5 : 'ico_ribonType5', //ev
+          6 : 'ico_ribonType6', //ev화물
+          7 : 'ico_ribonType7', //top5상담
+          8 : 'ico_ribonType8', //타임특가
+  );
+  @each $key, $value in $icoType {
+    &.type#{$key} {
+      @include bgIco(#{$value});
+    }
+  }
+}
+
+/* *** //상품 리스트 리본 *** */
+
+
+/* *** categoryTree *** */
+.categoryTree {
+  display: block;
+
+  .categoryTreeTop {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .categoryTreeList {
+    padding: 40px 250px 10px 250px;
+    background-color: #EAEAEA;
+
+    .categoryTreeItem {
+      display: flex;
+      position: relative;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      border-radius: 8px;
+      padding: 0 60px;
+      background-color: #fff;
+      border: 1px solid #D9D9D9;
+
+      > .name {
+        flex: auto;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 28px;
+        @include ellipsis;
+        color: #2f2f2f;
+      }
+
+      > .btn {
+        margin-left: 10px;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 40px;
+        top: 10px;
+        left: 10px;
+        @include bgIco(ico_handle);
+      }
+
+      &:hover {
+        border-width: 2px;
+        border-color: #FF404B;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        &::before {
+          @include bgIco(ico_handleHover);
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0;
+      // gap: 30px;
+      li {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        gap: 0;
+        padding: 10px 0 10px 10px;
+        // > li {
+        //   margin-top: 10px;
+        // }
+        .categoryTreeItem {
+          > .name {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* *** //categoryTree *** */
+
+
+/* *** productOrder *** */
+.productOrder {
+  .productOrderCategory {
+    margin-bottom: 20px;
+
+    .selectBox .v-select .vs__selected-options .vs__selected {
+      color: #FF404B;
+    }
+  }
+
+  .productOrderCount {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+
+  .productOrderListWrap {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .productOrderScrollCtrl {
+    position: sticky;
+    bottom: 40px;
+    width: 56px;
+    height: 132px;
+    margin: -172px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 42px;
+    margin-left: auto;
+    gap: 20px;
+
+    .btnScroll {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 28px;
+      background-color: #fff;
+      border: 1px solid #D9D9D9;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+      &::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: url(@/assets/img/common/ico_productOrderBtnScroll.png) no-repeat center;
+      }
+
+      &.bottom {
+        &::before {
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+  }
+
+  .productOrderList {
+    padding: 40px 140px;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .productOrderListItem {
+      padding: 0 25px 0 30px;
+      display: flex;
+      align-items: center;
+      height: 120px;
+      background-color: #fff;
+      border: 1px solid #d9d9d9;
+      border-radius: 8px;
+
+      .number {
+        flex: none;
+        width: 120px;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 48px;
+        font-weight: 300;
+        margin-right: 30px;
+      }
+
+      .imgBox {
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: 80px;
+        background: #F9F7F3;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+
+      .productInfo {
+        flex: auto;
+        max-width: calc(100% - 280px);
+        position: relative;
+
+        ul {
+          display: flex;
+          width: 100%;
+
+          + ul {
+            margin-top: 2px;
+          }
+
+          li {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            line-height: 22px;
+
+            &.carNumber {
+              font-weight: 700;
+            }
+
+            + li {
+              &::before {
+                content: '';
+                display: inline-block;
+                height: 14px;
+                width: 1px;
+                background-color: #D9D9D9;
+                margin: 0 10px;
+              }
+            }
+
+            .name {
+              margin-right: 20px;
+            }
+          }
+
+          &.point {
+            li {
+              font-size: 16px;
+              line-height: 28px;
+
+              + li {
+                &::before {
+                  content: '';
+                  display: inline-block;
+                  height: 14px;
+                  width: 1px;
+                  background-color: #D9D9D9;
+                  margin: 0 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ctrlBox {
+        display: none;
+        position: relative;
+        flex: none;
+        width: 98px;
+        height: 90px;
+        margin-left: 30px;
+        background: url(@/assets/img/common/ico_ctrlBox.png) no-repeat center / contain;
+
+        button {
+          position: absolute;
+          width: 32px;
+          height: 32px;
+          border-radius: 16px;
+          background: transparent;
+          @include textHidden;
+
+          &.btnTop {
+            top: 5px;
+            left: 33px;
+          }
+
+          &.btnBottom {
+            bottom: 5px;
+            left: 33px;
+          }
+
+          &.btnPrev {
+            top: 29px;
+            left: 5px;
+          }
+
+          &.btnNext {
+            top: 29px;
+            right: 5px;
+          }
+        }
+      }
+
+      &:hover {
+        padding: 0 24px 0 29px;
+        border: 2px solid #FF404B;
+
+        .number {
+          font-weight: 700;
+          font-size: 58px;
+          color: #FF404B;
+        }
+
+        .ctrlBox {
+          display: block;
+        }
+
+        .productInfo {
+          max-width: calc(100% - 280px - 128px);
+        }
+      }
+    }
+  }
+
+  .productOrderBtnArea {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    @include scrollbar;
+  }
+}
+
+/* *** //productOrder *** */
+
+
+/* *** 미리보기용 *** */
+
+
+/* ** cardList *** */
+// 추가
+.cardList {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+// pc
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 42px;
+
+  .li {
+    position: relative;
+    width: 372px;
+    border-radius: 8px;
+
+    .ribonArea {
+      display: flex;
+      gap: 4px;
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      z-index: 1;
+    }
+  }
+
+  .thum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 372px;
+    height: 247px;
+    padding: 10px;
+    background: #F9F7F3;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+
+    img {
+      max-width: none;
+      height: 169px;
+    }
+  }
+
+  .text {
+    padding: 30px 10px 20px;
+
+    .tit {
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 700;
+      height: 52px;
+      margin-bottom: 30px;
+      @include ellipsis(2);
+    }
+
+    .leasePrice {
+      .txt {
+        display: block;
+        font-size: 18px;
+        color: #54585A;
+        font-weight: 400;
+      }
+
+      .number {
+        display: block;
+        color: #8F9191;
+        text-decoration-line: line-through;
+        margin-top: 10px;
+      }
+    }
+
+    .settingPrice {
+      margin-top: 34px;
+
+      .number {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .unit {
+        font-size: 24px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .btnArea {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    gap: 10px;
+    margin-top: 40px;
+
+    button {
+      flex: 1;
+      font-size: 18px;
+      line-height: 46px;
+      font-weight: 700;
+      height: 48px;
+      padding: 0 9px;
+    }
+  }
+
+  .cardDim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+
+    &::before {
+      display: flex;
+      align-items: center;
+      content: 'SOLD OUT';
+      font-size: 100px;
+      color: #FFF;
+      line-height: 100px;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+      height: calc(100% - 67px);
+    }
+  }
+}
+
+/* ** //cardList ** */
+
+
+/* *** 미리보기용 *** */
+
+
+/* *** errorPage *** */
+.errorPage {
+  text-align: center;
+  padding: 140px 0 0;
+
+  .text1 {
+    font-size: 40px;
+    line-height: 58px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+
+  .text2 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .img {
+    display: block;
+    margin: 59px auto 0;
+  }
+
+  .btnArea {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .lg {
+      font-size: 20px;
+    }
+  }
+}
+
+/* *** //errorPage *** */

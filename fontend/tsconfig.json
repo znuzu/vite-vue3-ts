@@ -1,11 +1,16 @@
 {
   "files": [],
   "include": [
+    "vite.config.ts",
     "env.d.ts",
     "src/**/*.ts",
     "src/**/*.vue"
   ],
   "compilerOptions": {
+    "module": "es2022",
+    "moduleResolution": "node",
+    "target": "es2022",
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [

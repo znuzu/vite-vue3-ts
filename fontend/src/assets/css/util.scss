@@ -1,0 +1,315 @@
+/* *** scrollLock *** */
+.scrollLock {
+  overflow: hidden !important;
+}
+/* *** //scrollLock *** */
+
+
+
+/* *** number *** */
+.number {
+  font-family: 'Manrope' !important;
+  letter-spacing: 0 !important;
+}
+/* *** //number *** */
+
+
+
+/* *** hidden *** */
+.hidden{
+  @include hidden;
+}
+/* *** //hidden *** */
+
+
+
+/* *** text hidden *** */
+.textHidden{
+  @include textHidden;
+}
+/* *** //text hidden *** */
+
+
+
+/* *** float *** */
+.fL {
+  float: left !important;
+}
+.fR {
+  float: right !important;
+}
+/* *** //float *** */
+
+
+
+/* *** text-align *** */
+.taC {
+  text-align: center !important;
+}
+.taL {
+  text-align: left !important;
+}
+.taR {
+  text-align: left !important;
+}
+/* *** //text-align *** */
+
+
+
+/* *** vertical-align *** */
+.vaM {
+  vertical-align: middle !important;
+}
+.vaT {
+  vertical-align: top !important;
+}
+.vaB {
+  vertical-align: bottom !important;
+}
+/* *** //text-align *** */
+
+
+
+/* *** font-weight *** */
+.fwn {
+  font-weight: 400 !important;
+}
+.fwb {
+  font-weight: 700 !important;
+}
+/* *** //font-weight *** */
+
+
+
+/* *** font-size *** */
+@mixin fontSize($size, $lineH: inherit) {
+  $lineHeightValue: if($lineH == 'inherit', inherit, #{$lineH + 'px'});
+
+  .fs#{$size} {
+    font-size: #{$size}px !important;
+    line-height: $lineHeightValue !important;
+  }
+
+  %fs#{$size} {
+    font-size: #{$size}px;
+    line-height: $lineHeightValue;
+  }
+}
+
+@include fontSize(12, 22);
+@include fontSize(14, 24);
+@include fontSize(16, 28);
+@include fontSize(18, 28 );
+@include fontSize(20);
+@include fontSize(24,28);
+@include fontSize(28, 30);
+@include fontSize(36, 42);
+@include fontSize(60, 70);
+/* *** //font-size *** */
+
+
+
+/* *** text color *** */
+.textBlack{
+  color:#2F2F2F !important;
+}
+.textGray1{
+  color:#54585A !important;
+}
+.textGray2{
+  color:#8F9191 !important;
+}
+.textGray3{
+  color:#999999 !important;
+}
+.textGray4{
+  color:#CCCCCC !important;
+}
+.textRed{
+  color:#FF404B !important;
+}
+.textPurple{
+  color:#7D91F5 !important;
+}
+/* *** //text color *** */
+
+
+
+/* *** width *** */
+$widthSizes: 0,
+80,
+90,
+100,
+110,
+160,
+180,
+200,
+220,
+240,
+300,
+340,
+380,
+530,
+700,
+800;
+
+@each $size in $widthSizes {
+  .wt#{$size} {
+    width: #{$size}px !important;
+  }
+}
+.wt100p {
+  width: 100% !important;
+}
+/* *** //width *** */
+
+
+
+/* *** height *** */
+$heightSizes: 0,
+320;
+
+@each $size in $heightSizes {
+  .ht#{$size} {
+    height: #{$size}px !important;
+  }
+}
+/* *** //height *** */
+
+
+
+/* *** padding *** */
+
+
+/* ** padding-top ** */
+.pdt0 {
+  padding-top: 0 !important;
+}
+/* ** //padding-top ** */
+
+
+/* ** padding-left ** */
+.pdl0 {
+  padding-left: 0 !important;
+}
+/* ** //padding-left ** */
+
+
+/* ** padding-right ** */
+.pdr0 {
+  padding-right: 0 !important;
+}
+/* ** //padding-left ** */
+
+
+/* ** padding-bottom ** */
+.pdb0 {
+  padding-bottom: 0 !important;
+}
+/* ** //padding-bottom ** */
+
+
+/* *** //padding *** */
+
+
+
+/* *** margin *** */
+
+
+/* ** margin-top ** */
+.mgt0 {
+  margin-top: 0 !important;
+}
+.mgt10 {
+  margin-top: 10px !important;
+}
+.mgt20 {
+  margin-top: 20px !important;
+}
+.mgt30 {
+  margin-top: 30px !important;
+}
+.mgt40 {
+  margin-top: 40px !important;
+}
+/* ** //margin-top ** */
+
+
+/* ** margin-left ** */
+.mgl0 {
+  margin-left: 0 !important;
+}
+.mgl10 {
+  margin-left: 10px !important;
+}
+.mglAuto{
+  margin-left: auto !important;
+}
+/* ** //margin-left ** */
+
+
+/* ** margin-right ** */
+.mgr0 {
+  margin-right: 0 !important;
+}
+.mgr10 {
+  margin-right: 10px !important;
+}
+.mgr20 {
+  margin-right: 20px !important;
+}
+.mgr30 {
+  margin-right: 30px !important;
+}
+.mgr40 {
+  margin-right: 40px !important;
+}
+.mgrAuto{
+  margin-right: auto !important;
+}
+/* ** //margin-left ** */
+
+
+/* ** margin-bottom ** */
+.mgb0 {
+  margin-bottom: 0 !important;
+}
+.mgb10 {
+  margin-bottom: 10px !important;
+}
+/* ** //padding-bottom ** */
+
+
+/* *** //margin *** */
+
+
+
+/* *** Flex *** */
+.dFlex{
+  display: flex;
+}
+.dInlineFlex{
+  display: inline-flex;
+}
+.alignItemsCenter{
+  align-items: center;
+}
+/* *** //Flex *** */
+
+
+
+/* *** Gap *** */
+$gapSizes: 4,
+6,
+10,
+20,
+40,
+42,
+60;
+
+@each $size in $gapSizes {
+  .gap#{$size} {
+    gap: #{$size}px !important;
+  }
+}
+/* *** //Gap *** */

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
@@ -6,5 +7,6 @@
   <router-view/>
 </template>
 
-<style scoped>
+<style lang="scss">
+@import "@/assets/css/style.scss";
 </style>
